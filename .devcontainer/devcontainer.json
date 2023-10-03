@@ -1,0 +1,26 @@
+{
+	"name": "tf provider dev",
+	"build": {
+			"dockerfile": "./Dockerfile",
+			"context": "..",
+			"target": "tfdev"
+	},
+	"runArgs": [
+		"--security-opt", "seccomp=unconfined"
+	],
+	"mounts": [
+		"source=${env:HOME}${env:USERPROFILE}/.terraformrc,target=/root/.terraformrc,type=bind,consistency=cached"
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"hashicorp.terraform",
+				"golang.Go",
+				"ms-vscode.azurecli",
+				"KnisterPeter.vscode-commitizen",
+				"DavidAnson.vscode-markdownlint",
+				"Gruntfuggly.todo-tree"
+			]
+		}
+	}
+}

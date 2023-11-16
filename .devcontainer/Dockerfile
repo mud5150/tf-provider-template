@@ -16,4 +16,5 @@ RUN go install golang.org/x/tools/gopls@latest && \
     go install honnef.co/go/tools/cmd/staticcheck@latest
 # install terraform
 COPY --from=terraform /bin/terraform /bin/terraform
+ENV GOBIN=/go/bin
 CMD ["bash"]
